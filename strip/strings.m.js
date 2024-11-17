@@ -1,0 +1,32 @@
+import { loadTimeData } from "./load_time_data.js";
+
+loadTimeData.data = {
+    "audioMuting": "$1 - Audio muted",
+    "audioPlaying": "$1 - Audio playing",
+    "audioRecording": "$1 - Microphone recording",
+    "bluetoothConnected": "$1 - Bluetooth device connected",
+    "closeTab": "Close",
+    "defaultTabTitle": "Untitled",
+    "desktopCapturing": "$1 - Desktop content shared",
+    "fontfamily": "\"Noto Sans\", Arial, sans-serif",
+    "fontfamilyMd": "Roboto, \"Noto Sans\", Arial, sans-serif",
+    "fontsize": "75%",
+    "hidConnected": "$1 - HID device connected",
+    "language": "en",
+    "loadingTab": "Loading…",
+    "mediaRecording": "$1 - Camera and microphone recording",
+    "namedGroupLabel": "Group $2 - $3 - $1",
+    "pipPlaying": "$1 - Video playing in picture-in-picture mode",
+    "serialConnected": "$1 - Serial port connected",
+    "tabCapturing": "$1 - Desktop content shared",
+    "tabCrashed": "$1 - Crashed",
+    "tabGroupIdDataType": "application/vnd.chromium.tabgroup",
+    "tabIdDataType": "application/vnd.chromium.tab",
+    "tabListTitle": "Tab list",
+    "tabNetworkError": "$1 - Network error",
+    "textdirection": "ltr",
+    "unnamedGroupLabel": "Unnamed group - $2 - $1",
+    "usbConnected": "$1 - USB device connected",
+    "videoRecording": "$1 - Camera recording",
+    "vrPresenting": "$1 - VR presenting to headset"
+};

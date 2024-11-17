@@ -1,0 +1,28 @@
+{
+    "name": "tabstrip-astro",
+    "version": "0.0.1",
+    "description": "A basic Astro implementation of the Chrome WebUI tab strip",
+    "scripts": {
+        "build": "cd strip && bash build.sh",
+        "postinstall": "pnpm build"
+    },
+    "type": "module",
+    "exports": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "component": "./src/components/index.astro"
+    },
+    "devDependencies": {
+        "@types/node": "^22.9.0",
+        "@types/trusted-types": "^2.0.7",
+        "astro": "^4.16.13"
+    },
+    "files": [
+        "dist",
+        "src",
+        "strip"
+    ],
+    "dependencies": {
+        "ls": "^0.2.1"
+    }
+}
