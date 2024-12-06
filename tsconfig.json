@@ -1,9 +1,10 @@
 {
-    "compilerOptions": {
-        "types": ["trusted-types"],
-        "module": "ESNext",
-        "target": "ESNext",
-        "allowImportingTsExtensions": true
-    },
-    "include": ["src"]
+  "compilerOptions": {
+    "types": ["trusted-types"],
+    "module": "ESNext",
+    "target": "ESNext",
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": ["src"]
 }

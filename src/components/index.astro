@@ -1,37 +1,45 @@
 <script>
-    //@ts-nocheck
-    import "../../builder/out/tab_list.ts";
-    import { TabNetworkState } from "../../builder/out/tab_strip.mojom-webui.ts";
-    import { TabsApiProxyImpl } from "../../builder/out/tabs_api_proxy.ts";
+  import { TabsApiProxyImpl } from "../../builder/out/tabs_api_proxy.ts";
 
-    class TabsController {
-      controller: TabsApiProxyImpl;
-      
-      constructor() {
-        this.controller = TabsApiProxyImpl.createInstance(() => true);
-        this.handleResize = this.handleResize.bind(this);
-        
-        // Initial resize
-        this.handleResize();
-        
-        // Add resize listener
-        window.addEventListener("resize", this.handleResize);
+  TabsApiProxyImpl.createInstance(() => true);
+
+  //@ts-ignore
+  import "../../builder/out/tab_list.ts";
+
+  // Ensure the instance is created before any interaction
+  document.addEventListener("DOMContentLoaded", () => {
+      class TabsController {
+          controller;
+  
+          constructor() {
+              // Create the instance and store it
+              this.controller = TabsApiProxyImpl.getInstance();
+              this.handleResize = this.handleResize.bind(this);
+  
+              // Initial resize
+              this.handleResize();
+  
+              // Add resize listener
+              window.addEventListener("resize", this.handleResize);
+          }
+  
+          handleResize() {
+              // Ensure instance is ready before accessing
+              this.controller.setLayout({ 
+                  "--tabstrip-viewport-width": window.innerWidth + "px" 
+              });
+          }
       }
-    
-      handleResize() {
-        this.controller.setLayout({ 
-          "--tabstrip-viewport-width": window.innerWidth + "px" 
-        });
-      }
-    }
-    
-    new TabsController();
+  
+      // Instantiate the TabsController after DOM is loaded
+      new TabsController();
+  });
 </script>
-    
+  
 <div class="tabstrip">
     <tabstrip-tab-list></tabstrip-tab-list>
 </div>
-    
+
 <style>
     .tabstrip {
       --google-grey-50-rgb: 248, 249, 250;
